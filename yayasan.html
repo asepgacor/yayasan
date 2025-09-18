@@ -1,235 +1,288 @@
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rumah Aktivis Sejahtera (RASH)</title>
-  <meta name="description" content="Yayasan Rumah Aktivis Sejahtera - Pendidikan, Aktivisme, dan Bantuan Kemanusiaan." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Rakyat Mengusut — Berita & Investigasi</title>
+  <meta name="description" content="Portal berita Rakyat Mengusut: politik, ekonomi, teknologi, budaya, lingkungan, dan investigasi mendalam." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#ff6b6b;--accent-2:#06b6d4;--glass:rgba(255,255,255,0.03);color-scheme:dark}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#e6eef8;background:linear-gradient(180deg,#071021 0%,#06121a 60%)}
+    a{color:var(--accent)}
+    .container{max-width:1150px;margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),var(--accent-2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800}
+    nav{display:flex;gap:10px;align-items:center}
+    nav a{padding:8px;border-radius:8px;color:var(--muted);font-weight:600}
+    .search{display:flex;gap:8px;align-items:center}
+    .search input{padding:8px 10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit}
+    .top-ticker{background:#061018;padding:8px 0;margin-top:12px;border-radius:8px;overflow:hidden}
+    .ticker-inner{white-space:nowrap;display:inline-block;padding-left:100%;animation:tick 22s linear infinite}
+    @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}.hero{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-top:18px}
+.hero-main{background:var(--card);padding:18px;border-radius:12px}
+.hero-main .headline{font-size:22px;margin:0 0 8px}
+.hero-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+.card{background:var(--card);padding:12px;border-radius:10px;border:1px solid var(--glass)}
+
+.sidebar{display:flex;flex-direction:column;gap:12px}
+.category-list{display:flex;flex-wrap:wrap;gap:8px}
+.category-list button{padding:8px 10px;border-radius:8px;border:none;background:rgba(255,255,255,0.03);cursor:pointer}
+
+/* slider */
+.slider{position:relative;overflow:hidden;border-radius:10px}
+.slides{display:flex;transition:transform .45s ease}
+.slide{min-width:100%;height:220px;position:relative}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide .label{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,0.5);padding:8px;border-radius:8px}
+
+/* list */
+.news-list{display:grid;gap:12px}
+.news-item{display:flex;gap:12px;align-items:flex-start}
+.news-item img{width:140px;height:88px;object-fit:cover;border-radius:8px}
+
+/* multimedia */
+.media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.media-grid video, .media-grid img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+/* article */
+.article{background:var(--card);padding:18px;border-radius:12px}
+.meta{font-size:13px;color:var(--muted);margin-bottom:12px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{padding:6px 8px;border-radius:6px;background:rgba(255,255,255,0.02)}
+
+/* controls */
+.controls{display:flex;gap:8px;align-items:center}
+.btn{padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+.btn.primary{background:var(--accent);color:#081018}
+
+/* footer */
+footer{margin-top:28px;padding:18px;border-top:1px solid rgba(255,255,255,0.03);text-align:center;color:var(--muted)}
+
+/* small screens */
+@media(max-width:980px){.hero{grid-template-columns:1fr}.media-grid{grid-template-columns:repeat(2,1fr)}.media-grid video{height:120px}}
+@media(max-width:600px){.media-grid{grid-template-columns:1fr}.slides{height:180px}}
+
+/* light mode */
+body.light{background:#f7fafc;color:#0b1220}
+body.light .card, body.light .card{background:#fff;color:#0b1220}
+body.light .logo{color:#fff}
+
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <div class="logo">
-        <div class="mark">R</div>
-        <div class="brand">
-          <div class="name">Rumah Aktivis Sejahtera</div>
-          <div class="tag">RASH — Peduli • Edukasi • Bergerak</div>
-        </div>
-      </div>
-      <nav class="navlinks">
-        <a href="#home">Beranda</a>
-        <a href="#about">Tentang</a>
-        <a href="#programs">Program</a>
-        <a href="#news">Berita</a>
-        <a href="#gallery">Galeri</a>
-        <a href="#donate">Donasi</a>
-        <a href="#volunteer">Gabung</a>
-        <a href="#contact">Kontak</a>
-        <a class="btn primary" href="#donate">Donasi</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Buka menu">☰</button>
-    </div>
-  </header>  <main class="container">
-    <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="hero-left card">
-        <h1>Rumah Aktivis Sejahtera (RASH)</h1>
-        <p class="lead">Membangun literasi sosial dan kepemudaan untuk masyarakat yang mandiri, berdaya, dan berkeadilan.</p><div class="welcome">
-      <h3>Sambutan Ketua Yayasan</h3>
-      <p class="muted">Assalamu'alaikum. Selamat datang di RASH — wadah bagi aktivis muda dan komunitas yang ingin mewujudkan perubahan positif melalui pendidikan, advokasi, dan aksi nyata.</p>
-    </div>
-
-    <div class="quickbtns">
-      <a class="btn" href="#donate">Donasi</a>
-      <a class="btn" href="#volunteer">Gabung Relawan</a>
-      <a class="btn ghost" href="#news">Agenda Kegiatan</a>
-    </div>
-
-    <p class="note">Highlight program: <strong>Pendidikan Literasi Sosial</strong> — Batch terbaru dimulai 1 Oktober 2025.</p>
-  </div>
-
-  <aside class="hero-right card">
-    <h3>Donasi Sekarang</h3>
-    <p class="muted">Dukung kegiatan kami untuk pendidikan dan bantuan kemanusiaan.</p>
-    <div class="donation-box">
-      <div><strong>BCA</strong> 012-345-6789</div>
-      <div><strong>BNI</strong> 987-654-3210</div>
-    </div>
-    <a class="btn primary" href="#donate">Donasi</a>
-  </aside>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="card">
-    <h2>Tentang Kami</h2>
-    <p class="muted">Yayasan Rumah Aktivis Sejahtera (RASH) didirikan untuk menjadi ruang bagi aktivis muda dan masyarakat yang ingin belajar, berkegiatan, serta mengambil peran sosial. Kami bekerja melalui pendidikan, pelatihan, kampanye, dan bantuan langsung.</p>
-
-    <div class="grid-3">
-      <div>
-        <h4>Sejarah</h4>
-        <p class="muted">Bermula dari komunitas kampus, RASH resmi berdiri pada tahun 20XX dengan tujuan memberdayakan pemuda melalui pendidikan dan advokasi.</p>
-      </div>
-      <div>
-        <h4>Visi & Misi</h4>
-        <p class="muted">Visi: Masyarakat yang sadar sosial dan berdaya. Misi: Pendidikan, advokasi, dan aksi kemanusiaan.</p>
-      </div>
-      <div>
-        <h4>Legalitas</h4>
-        <p class="muted">SK Pendirian: No. XXXXX — Registrasi YYY. (Unggah dokumen legal di dashboard admin)</p>
-      </div>
-    </div>
-
-    <h4>Struktur Organisasi</h4>
-    <div class="grid-3 team">
-      <div class="person card-sm"><strong>Ketua</strong><div class="muted small">Nama Ketua</div></div>
-      <div class="person card-sm"><strong>Sekretaris</strong><div class="muted small">Nama Sekretaris</div></div>
-      <div class="person card-sm"><strong>Bendahara</strong><div class="muted small">Nama Bendahara</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAMS -->
-<section id="programs">
-  <h2>Program & Kegiatan</h2>
-  <div class="grid-3 programs">
-    <article class="program card">
-      <img src="https://images.unsplash.com/photo-1529336953127-2095b3aa0b2f?q=80&w=1200&auto=format&fit=crop" alt="Pendidikan" />
-      <h4>Pendidikan & Literasi Sosial</h4>
-      <p class="muted">Pelatihan untuk pemuda tentang isu sosial, hak asasi, dan literasi politik.</p>
-    </article>
-
-    <article class="program card">
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" alt="Pelatihan" />
-      <h4>Pelatihan Kepemudaan & Aktivisme</h4>
-      <p class="muted">Workshop kepemimpinan, advokasi, dan public speaking untuk relawan.</p>
-    </article>
-
-    <article class="program card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Bantuan" />
-      <h4>Bantuan Kemanusiaan & Advokasi</h4>
-      <p class="muted">Bantuan darurat dan advokasi untuk kelompok rentan.</p>
-    </article>
-  </div>
-</section>
-
-<!-- NEWS -->
-<section id="news">
-  <h2>Berita & Artikel</h2>
-  <div class="news-grid">
-    <div class="news-list">
-      <article class="news card">
-        <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1200&auto=format&fit=crop" alt="kegiatan" />
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">RM</div>
         <div>
-          <h4>Kegiatan: Pelatihan Literasi Sosial</h4>
-          <p class="muted">Ringkasan acara dan hasil capaian. <a href="#">Baca selengkapnya</a></p>
+          <div style="font-weight:800">Rakyat Mengusut</div>
+          <div style="font-size:13px;color:var(--muted)">Portal Berita & Investigasi</div>
         </div>
-      </article>
+      </div><div style="display:flex;align-items:center;gap:12px">
+    <nav>
+      <a href="#home">Beranda</a>
+      <a href="#kategori">Kategori</a>
+      <a href="#multimedia">Multimedia</a>
+      <a href="#live">Live</a>
+    </nav>
+    <div class="search">
+      <input id="q" placeholder="Cari berita, kata kunci..." oninput="debouncedSearch(this.value)" />
+      <button class="btn" onclick="openLogin()"><i class="fa fa-user"></i></button>
+      <button class="btn" id="themeBtn" onclick="toggleTheme()"><i class="fa fa-moon"></i></button>
+    </div>
+  </div>
+</header>
 
-      <article class="news card">
-        <img src="https://images.unsplash.com/photo-1532634896-26909d0d9b16?q=80&w=1200&auto=format&fit=crop" alt="opini" />
-        <div>
-          <h4>Opini: Peran Pemuda</h4>
-          <p class="muted">Tulisan aktivis tentang strategi advokasi.</p>
+<!-- ticker -->
+<div class="top-ticker card" id="ticker">
+  <div style="padding:0 12px;color:var(--muted);font-weight:700">Breaking: </div>
+  <div class="ticker-inner" id="tickerInner">Demo breaking news • Gempa M5.2 di wilayah X • Pemilu: Debat Kandidat Malam Ini • Harga BBM: Update terbaru • Rakyat Mengusut - Investigasi mendalam</div>
+</div>
+
+<!-- HERO -->
+<main class="hero" id="home">
+  <section>
+    <div class="hero-main">
+      <div class="slider card" id="mainSlider">
+        <div class="slides" id="slides">
+          <div class="slide"><img src="https://images.unsplash.com/photo-1543248939-1d6b0a1d3f3f?q=80&w=1400&auto=format&fit=crop&s=placeholder" alt="slide1"><div class="label">[Utama] Investigasi Dana Publik</div></div>
+          <div class="slide"><img src="https://images.unsplash.com/photo-1526378722871-92d9a0f8e5f1?q=80&w=1400&auto=format&fit=crop&s=placeholder" alt="slide2"><div class="label">[Analisis] Dampak Ekonomi</div></div>
+          <div class="slide"><img src="https://images.unsplash.com/photo-1508385082359-f4f3d3d0d8c9?q=80&w=1400&auto=format&fit=crop&s=placeholder" alt="slide3"><div class="label">[Video] Liputan Lapangan</div></div>
         </div>
-      </article>
+      </div>
+
+      <div class="grid" style="margin-top:12px">
+        <div class="card">
+          <h3 class="headline">Judul Utama: Investigasi Rantai Pengadaan Publik</h3>
+          <p class="meta">12 Sep 2025 • Tim Redaksi</p>
+          <p style="color:var(--muted)">Ringkasan singkat berita utama. Klik untuk baca selengkapnya.</p>
+          <div style="margin-top:10px" class="controls">
+            <button class="btn primary" onclick="openArticle(1)"><i class="fa fa-newspaper"></i> Baca Selengkapnya</button>
+            <button class="btn" onclick="bookmarkArticle(1)"><i class="fa fa-bookmark"></i> Simpan</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4>Trending Hari Ini</h4>
+          <ol style="margin:8px 0;padding-left:18px;color:var(--muted)">
+            <li>Debat Publik</li>
+            <li>Kasus Lingkungan</li>
+            <li>Startup Lokal Meraih Pendanaan</li>
+          </ol>
+          <h4 style="margin-top:8px">Kategori Populer</h4>
+          <div class="category-list" id="categoryList">
+            <button onclick="filterBy('politik')">Politik</button>
+            <button onclick="filterBy('ekonomi')">Ekonomi</button>
+            <button onclick="filterBy('teknologi')">Teknologi</button>
+            <button onclick="filterBy('hiburan')">Hiburan</button>
+            <button onclick="filterBy('olahraga')">Olahraga</button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <aside class="sidebar card">
-      <h4>Agenda Kegiatan</h4>
-      <ul class="muted">
-        <li>1 Okt 2025 — Pelatihan Literasi Sosial</li>
-        <li>10 Nov 2025 — Kampanye Lingkungan</li>
-        <li>25 Des 2025 — Bakti Sosial</li>
-      </ul>
-    </aside>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <h2>Galeri</h2>
-  <div class="gallery-grid">
-    <figure><img src="https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=800&auto=format&fit=crop" alt="galeri1" /></figure>
-    <figure><img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=800&auto=format&fit=crop" alt="galeri2" /></figure>
-    <figure><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="galeri3" /></figure>
-    <figure><img src="https://images.unsplash.com/photo-1529336953127-2095b3aa0b2f?q=80&w=800&auto=format&fit=crop" alt="galeri4" /></figure>
-  </div>
-
-  <div class="card video-card">
-    <h4>Video Dokumentasi</h4>
-    <div class="video-placeholder">Video embed / link YouTube</div>
-  </div>
-</section>
-
-<!-- DONATE -->
-<section id="donate">
-  <h2>Donasi & Dukungan</h2>
-  <div class="card donate-grid">
-    <div>
-      <p class="muted">Dukung keberlangsungan program RASH. Semua donasi tercatat dan pelaporan keuangan tersedia untuk transparansi.</p>
-      <h4>Metode Donasi</h4>
-      <ul class="muted">
-        <li>Transfer Bank (rekening tertera di beranda)</li>
-        <li>Gopay / OVO / Dana (nomor: 0812-xxxx-xxxx)</li>
-        <li>Donasi online (siapkan integrasi payment gateway)</li>
-      </ul>
-    </div>
-
-    <aside class="card-sm">
-      <h4>Testimoni</h4>
-      <blockquote class="muted">"Bantuan RASH sangat berarti untuk komunitas kami." — Donatur</blockquote>
-    </aside>
-  </div>
-</section>
-
-<!-- VOLUNTEER -->
-<section id="volunteer">
-  <h2>Gabung & Relawan</h2>
-  <div class="card">
-    <p class="muted">Isi formulir di bawah untuk menjadi relawan. Tim kami akan menghubungi kamu untuk orientasi dan jadwal pelatihan.</p>
-    <form id="volForm">
-      <div class="form-row">
-        <label>Nama Lengkap<input required name="name" type="text"/></label>
-        <label>Umur<input name="age" type="number"/></label>
+    <section style="margin-top:12px">
+      <h4>Berita Terbaru</h4>
+      <div id="newsList" class="news-list">
+        <!-- JS akan mengisi daftar berita -->
       </div>
-      <label>Email<input name="email" type="email" required/></label>
-      <label>Motivasi singkat<textarea name="message" rows="4"></textarea></label>
-      <div class="form-actions">
-        <button type="submit" class="btn primary">Kirim Pendaftaran</button>
-        <button type="button" id="download-vol" class="btn ghost">Unduh PDF</button>
-      </div>
-    </form>
-  </div>
-</section>
+    </section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Kontak Kami</h2>
-  <div class="contact-grid">
+  <aside class="sidebar">
     <div class="card">
-      <p>Alamat Kantor:</p>
-      <p class="muted">Jl. Contoh No. 12, Kecamatan, Kota — Kode Pos</p>
-      <p>Email: <a href="mailto:info@rash.org">info@rash.org</a></p>
-      <p>Telp: <a href="tel:+628123456789">+62 812-3456-789</a></p>
+      <h4>Multimedia</h4>
+      <div class="media-grid" id="mediaGrid">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=900&auto=format&fit=crop&s=placeholder" alt="media1">
+        <video controls src="" poster="https://images.unsplash.com/photo-1523978591478-c753949ff840?q=80&w=900&auto=format&fit=crop&s=placeholder">Your browser tidak mendukung video.</video>
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=900&auto=format&fit=crop&s=placeholder" alt="media3">
+      </div>
+    </div>
 
-      <h4>Form Kontak</h4>
-      <form id="contactForm">
-        <label>Nama<input name="name" required /></label>
-        <label>Email<input type="email" name="email" required /></label>
-        <label>Pesan<textarea name="message" rows="4" required></textarea></label>
-        <div class="form-actions">
-          <button class="btn primary" type="submit">Kirim Pesan</button>
-        </div>
+    <div class="card">
+      <h4>Newsletter</h4>
+      <p class="meta">Langganan ringkasan harian kami.</p>
+      <form id="newsletterForm" onsubmit="handleSubscribe(event)">
+        <input id="nlEmail" type="email" placeholder="email@contoh.com" required />
+        <button class="btn primary" type="submit">Langganan</button>
       </form>
     </div>
 
-    <aside class="card">
-      <h4>Lokasi</h4>
-      <iframe title="peta" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.0000000000005!2d106.816666!3d-6.200000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDEyJzAwLjAiUyAxMDbCsDEyJzAwLjAiRQ!5e0!3m2!1sid!2sid!4v0000000000000" width="100%" height="250" style="border:0;border-radius:8px" allowfullscreen loading="lazy"></iframe>
+    <div class="card">
+      <h4>Berita Lokal</h4>
+      <p class="meta" id="localHint">Izinkan lokasi untuk melihat berita terdekat.</p>
+      <button class="btn" onclick="detectLocation()">Deteksi Lokasi</button>
+      <div id="localNews" style="margin-top:8px;color:var(--muted)"></div>
+    </div>
 
-      <h4>Media Sosial</h4>
-      <div class="socials"><a href="#">Instagram</a> <a href="#">Facebook</a> <a href="#">YouTube</a></div>
-    </aside>
+  </aside>
+</main>
+
+<!-- ARTICLE TEMPLATE (modal-like) -->
+<div id="articleModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:20px">
+  <div style="max-width:900px;width:100%">
+    <div class="article card" id="articleContent">
+      <!-- filled by JS -->
+    </div>
+    <div style="text-align:right;margin-top:8px"><button class="btn" onclick="closeArticle()">Tutup</button></div>
   </div>
-</section>
+</div>
+
+<!-- LOGIN MOCK -->
+<div id="loginModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:20px">
+  <div style="max-width:420px;width:100%">
+    <div class="card">
+      <h3>Masuk / Daftar</h3>
+      <p class="meta">Demo: data disimpan di localStorage.</p>
+      <form onsubmit="handleLogin(event)">
+        <input id="userEmail" type="email" placeholder="email" required />
+        <input id="userName" type="text" placeholder="nama" required />
+        <div style="display:flex;gap:8px;margin-top:8px"><button class="btn primary" type="submit">Masuk</button><button class="btn" type="button" onclick="closeLogin()">Batal</button></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <div>© 2025 Rakyat Mengusut — Semua hak dilindungi.</div>
+    <div style="color:var(--muted)">Ikuti: <a href="#">Instagram</a> • <a href="#">Twitter</a> • <a href="#">YouTube</a></div>
+  </div>
+</footer>
+
+  </div>  <script>
+    // Demo data & helpers
+    const demoNews = [
+      {id:1,title:'Investigasi Rantai Pengadaan Publik',cat:'politik',img:'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=900&auto=format&fit=crop&s=placeholder',date:'12 Sep 2025',author:'Tim Redaksi',content:'Isi lengkap artikel investigasi...'},
+      {id:2,title:'Pertumbuhan Ekonomi Kuartal III',cat:'ekonomi',img:'https://images.unsplash.com/photo-1509099836639-18ba1e1aef62?q=80&w=900&auto=format&fit=crop&s=placeholder',date:'10 Sep 2025',author:'Andi Saputra',content:'Analisis ekonomi terbaru...'},
+      {id:3,title:'Startup Lokal Raih Pendanaan Seri A',cat:'teknologi',img:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=900&auto=format&fit=crop&s=placeholder',date:'09 Sep 2025',author:'Mira',content:'Kisah startup...'}
+    ];
+
+    // render news list
+    function renderNews(list=demoNews){
+      const el = document.getElementById('newsList'); el.innerHTML='';
+      list.forEach(n=>{
+        const div = document.createElement('div'); div.className='card news-item';
+        div.innerHTML = `<img src="${n.img}" alt="${n.title}"><div><strong>${n.title}</strong><div class=meta>${n.date} • ${n.author}</div><p style=\"color:var(--muted)\">${n.content.slice(0,120)}...</p><div style=\"margin-top:8px\"><button class=\"btn primary\" onclick=\"openArticle(${n.id})\">Baca</button> <button class=\"btn\" onclick=\"bookmarkArticle(${n.id})\">Simpan</button></div></div>`;
+        el.appendChild(div);
+      })
+    }
+    renderNews();
+
+    // article modal
+    function openArticle(id){
+      const a = demoNews.find(x=>x.id===id); if(!a) return;
+      document.getElementById('articleContent').innerHTML = `<h2>${a.title}</h2><div class=meta>${a.date} • ${a.author} • <span class=tags><span class=tag>${a.cat}</span></span></div><img src='${a.img}' style='width:100%;border-radius:8px;margin:12px 0;height:320px;object-fit:cover'><p style='color:var(--muted)'>${a.content.repeat(8)}</p><h4>Komentar</h4><div id='comments_${a.id}'></div><form onsubmit='addComment(event,${a.id})' style='margin-top:8px'><input placeholder='Nama' id='cname' required style='padding:8px;border-radius:8px;margin-bottom:8px;width:100%'><textarea id='cmsg' rows=3 required style='padding:8px;border-radius:8px;width:100%'></textarea><div style='margin-top:8px'><button class='btn primary' type='submit'>Kirim Komentar</button></div></form>`;loadComments(a.id);
+  document.getElementById('articleModal').style.display='flex';
+}
+function closeArticle(){document.getElementById('articleModal').style.display='none'}
+
+// comments (localStorage naive moderation)
+function loadComments(id){
+  const key='rm_comments_'+id; const arr = JSON.parse(localStorage.getItem(key)||'[]');
+  const el = document.getElementById('comments_'+id); el.innerHTML='';
+  arr.forEach(c=>{const d=document.createElement('div');d.style.margin='8px 0';d.innerHTML=`<strong>${escapeHtml(c.name)}</strong> <div class=meta>${new Date(c.t).toLocaleString()}</div><div style=color:var(--muted)>${escapeHtml(c.msg)}</div>`;el.appendChild(d)})
+}
+function addComment(e,id){e.preventDefault();const name=document.getElementById('cname').value;const msg=document.getElementById('cmsg').value;const key='rm_comments_'+id;const arr=JSON.parse(localStorage.getItem(key)||'[]');arr.unshift({name,msg,t:Date.now()});localStorage.setItem(key,JSON.stringify(arr));loadComments(id);e.target.reset();}
+
+function escapeHtml(s){return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
+
+// bookmark
+function bookmarkArticle(id){const key='rm_bookmarks';const arr=JSON.parse(localStorage.getItem(key)||'[]');if(!arr.includes(id))arr.push(id);localStorage.setItem(key,JSON.stringify(arr));alert('Artikel disimpan ke Bookmark')}
+
+// slider auto
+let slideIndex=0; function showSlide(i){const slides=document.getElementById('slides');slideIndex=i;slides.style.transform='translateX(-'+(i*100)+'%)'}
+setInterval(()=>{slideIndex=(slideIndex+1)%3;showSlide(slideIndex)},4500)
+
+// simple search (filter)
+let searchTimer; function debouncedSearch(q){clearTimeout(searchTimer);searchTimer=setTimeout(()=>search(q),300)}
+function search(q){q=q.trim().toLowerCase();if(!q){renderNews();return}const res=demoNews.filter(n=>n.title.toLowerCase().includes(q)||n.content.toLowerCase().includes(q)||n.cat.includes(q));renderNews(res)}
+
+function filterBy(cat){const res=demoNews.filter(n=>n.cat===cat);renderNews(res)}
+
+// newsletter
+function handleSubscribe(e){e.preventDefault();const em=document.getElementById('nlEmail').value;alert('Terima kasih! '+em+' telah berlangganan.');e.target.reset();}
+
+// live detect location
+function detectLocation(){if(!navigator.geolocation){alert('Geolocation tidak didukung browser');return}navigator.geolocation.getCurrentPosition(pos=>{const {latitude,longitude}=pos.coords;document.getElementById('localHint').innerText=`Lokasi terdeteksi: ${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;document.getElementById('localNews').innerHTML=`Menampilkan berita untuk area dekat (${latitude.toFixed(2)},${longitude.toFixed(2)}). (Demo)`},err=>{alert('Gagal mengambil lokasi: '+err.message)})}
+
+// theme toggle
+function toggleTheme(){document.body.classList.toggle('light');const el=document.getElementById('themeBtn');el.innerHTML = document.body.classList.contains('light')?'<i class=\"fa fa-sun\"></i>':'<i class=\"fa fa-moon\"></i>'}
+
+// login mock
+function openLogin(){document.getElementById('loginModal').style.display='flex'}
+function closeLogin(){document.getElementById('loginModal').style.display='none'}
+function handleLogin(e){e.preventDefault();const em=document.getElementById('userEmail').value;const name=document.getElementById('userName').value;localStorage.setItem('rm_user',JSON.stringify({email:em,name}));alert('Selamat datang, '+name);closeLogin()}
+
+// helper: unsafe demo escape - replace with proper sanitization in production
+
+// init ticker text rotation (simulate feed)
+setInterval(()=>{const t=document.getElementById('tickerInner');t.innerText = ['Breaking: Aksi protes di kota A','Update: Harga beras naik 7%','Eksklusif: Dokumen kebijakan X','Live: Debat di Istana'].concat([])[Math.floor(Math.random()*4)]},7000)
+
+  </script>
+</body>
+          </html>
